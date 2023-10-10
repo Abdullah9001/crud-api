@@ -106,7 +106,7 @@ app.put("/api/v1/posts/:postId", async (req, res) => {
       .collection("posts")
       .updateOne(
         { _id: new ObjectId(postId) },
-        { $set: { title: req.body.title, description: req.body.description } }
+        { $set: { todo: req.body.todo, id: req.body.id } }
       );
 
     res.status(200).json({ success: true, data: post });
